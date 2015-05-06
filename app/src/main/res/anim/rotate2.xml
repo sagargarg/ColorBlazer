@@ -7,9 +7,9 @@
         android:fromDegrees="0"
         android:pivotX="50%"
         android:pivotY="50%"
-        android:repeatCount="2"
-        android:startOffset="0"
-        android:toDegrees="360"
+        android:repeatCount="0"
+        android:startOffset="60"
+        android:toDegrees="120"
         />
 
 </set>

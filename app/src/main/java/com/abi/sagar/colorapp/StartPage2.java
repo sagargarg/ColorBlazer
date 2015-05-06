@@ -1,6 +1,7 @@
 package com.abi.sagar.colorapp;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Menu;
@@ -26,10 +27,20 @@ public class StartPage2 extends Activity {
         rotate1.reset();
         rotate1.start();
 
-        Animation rotate2 = AnimationUtils.loadAnimation(this, R.anim.rotate2);
-        findViewById(R.id.triangle2).startAnimation(rotate2);
+        final Animation rotate2 = AnimationUtils.loadAnimation(this, R.anim.rotate2);
+        View Tri2 = (View) findViewById(R.id.triangle2);//.startAnimation(rotate2);
+        Tri2.startAnimation(rotate2);
         rotate2.reset();
         rotate2.start();
+
+        Tri2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rotate2.reset();
+                rotate2.start();
+            }
+        });
+
 
         ImageView rocketImage = (ImageView) findViewById(R.id.moving_red_box);
         rocketImage.setBackgroundResource(R.drawable.animation_box);
