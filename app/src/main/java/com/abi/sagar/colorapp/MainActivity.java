@@ -14,6 +14,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     AnimationDrawable rocketAnimation;
     AnimationDrawable rocketAnimation2;
 
+    // THis is a comment
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
