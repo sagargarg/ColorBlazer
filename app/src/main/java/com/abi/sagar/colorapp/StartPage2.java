@@ -32,6 +32,8 @@ public class StartPage2 extends Activity {
         rotate3 = AnimationUtils.loadAnimation(this, R.anim.rotate3);
         triangle2 = (View) findViewById(R.id.triangle2);
 
+        triangle2.setRotation(60);
+
         ImageView rocketImage = (ImageView) findViewById(R.id.moving_red_box);
         rocketImage.setBackgroundResource(R.drawable.animation_box);
         rocketAnimation = (AnimationDrawable) rocketImage.getBackground();
