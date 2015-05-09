@@ -22,22 +22,28 @@ public class StartPage2 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_page_two);
 
-        Animation rotate1 = AnimationUtils.loadAnimation(this, R.anim.rotate);
-        findViewById(R.id.triangle1).startAnimation(rotate1);
-        rotate1.reset();
-        rotate1.start();
+        Animation rotate = AnimationUtils.loadAnimation(this, R.anim.rotate);
+        findViewById(R.id.triangle1).startAnimation(rotate);
 
+        final Animation rotate1 = AnimationUtils.loadAnimation(this, R.anim.rotate1);
         final Animation rotate2 = AnimationUtils.loadAnimation(this, R.anim.rotate2);
-        View Tri2 = (View) findViewById(R.id.triangle2);//.startAnimation(rotate2);
-        Tri2.startAnimation(rotate2);
-        rotate2.reset();
-        rotate2.start();
+        final Animation rotate3 = AnimationUtils.loadAnimation(this, R.anim.rotate3);
+        final View Tri2 = (View) findViewById(R.id.triangle2);
+
+    
 
         Tri2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                rotate2.reset();
+                Tri2.startAnimation(rotate1);
+                rotate1.start();
+
+                Tri2.startAnimation(rotate2);
                 rotate2.start();
+
+                Tri2.startAnimation(rotate3);
+                rotate3.start();
+
             }
         });
 
