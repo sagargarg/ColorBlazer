@@ -19,6 +19,9 @@ public class StartPage2 extends Activity {
     View triangle2;
     int currentAnimation = 0;
 
+    Animation move;
+    View shape;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +34,11 @@ public class StartPage2 extends Activity {
         rotate2 = AnimationUtils.loadAnimation(this, R.anim.rotate2);
         rotate3 = AnimationUtils.loadAnimation(this, R.anim.rotate3);
         triangle2 = (View) findViewById(R.id.triangle2);
-
         triangle2.setRotation(60);
+
+        move = AnimationUtils.loadAnimation(this, R.anim.move);
+        shape = (View) findViewById(R.id.shape);
+        shape.startAnimation(move);
 
         ImageView rocketImage = (ImageView) findViewById(R.id.moving_red_box);
         rocketImage.setBackgroundResource(R.drawable.animation_box);
@@ -40,7 +46,6 @@ public class StartPage2 extends Activity {
         rocketAnimation.start();
 
     }
-
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
 
