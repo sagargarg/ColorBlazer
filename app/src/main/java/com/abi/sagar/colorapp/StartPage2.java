@@ -44,26 +44,26 @@ public class StartPage2 extends Activity {
         move = AnimationUtils.loadAnimation(this, R.anim.move);
         loc = new int[2];
         loc1 = new int[2];
-        shape.getLocationOnScreen(loc);
+
         shape = (View) findViewById(R.id.shape);
         shape.startAnimation(move);
-        Thread timer = new Thread() {
+
+        final android.os.Handler customHandler = new Handler();
+
+        Runnable updateTimerThread = new Runnable() {
             public void run() {
-                for(;;) {
-                    shape.getLocationOnScreen(loc);
-                    triangle.getLocationOnScreen(loc1);
-                    if (loc1.equals(loc)) {
-                        move.reset();
-                    }
+                shape.getLocationOnScreen(loc);
+                triangle.getLocationOnScreen(loc1);
+                if ((loc1[0] - loc[0]) * (loc1[0] - loc[0]) + (loc1[1] - loc[1]) * (loc1[1] - loc[1]) <= 1000) {
+                    move.reset();
                 }
+                customHandler.postDelayed(this, 1000);
             }
         };
 
-        Handler uiCallback = new Handler () {
-            public void handleMessage (Message msg) {
-                // do stuff with UI
-            }
-        };
+
+        customHandler.postDelayed(updateTimerThread, 0);
+
 
         /*ImageView rocketImage = (ImageView) findViewById(R.id.moving_red_box);
         rocketImage.setBackgroundResource(R.drawable.animation_box);
