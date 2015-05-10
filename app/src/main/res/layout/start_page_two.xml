@@ -13,38 +13,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <View
+    <!--<View
         android:id="@+id/triangle1"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:background="@drawable/triangle"
-        />
+        android:background="@drawable/triangle"/>-->
+
+    <ImageView
+    android:id="@+id/shape"
+    android:layout_width="35dp"
+    android:layout_height="35dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/box_red"/>
 
     <View
-        android:id="@+id/triangle2"
+        android:id="@+id/triangle"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="225dp"
         android:background="@drawable/triangle" />
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/moving_red_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="425dp"
-        android:background="@drawable/animation_box"/>
-
-    <ImageView
-        android:id="@+id/shape"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/box_red"/>
+        android:background="@drawable/animation_box"/>-->
 
 </RelativeLayout>
