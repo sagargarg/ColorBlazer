@@ -1,6 +1,8 @@
 package com.abi.sagar.colorapp;
 
 import android.app.Activity;
+import android.appwidget.AppWidgetManager;
+import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,6 +11,8 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.os.Handler;
+import android.os.Message;
 
 public class StartPage2 extends Activity {
 
@@ -20,6 +24,8 @@ public class StartPage2 extends Activity {
 
     Animation move;
     View shape;
+
+    int[] loc, loc1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +42,28 @@ public class StartPage2 extends Activity {
         triangle.setRotation(60);
 
         move = AnimationUtils.loadAnimation(this, R.anim.move);
+        loc = new int[2];
+        loc1 = new int[2];
+        shape.getLocationOnScreen(loc);
         shape = (View) findViewById(R.id.shape);
         shape.startAnimation(move);
+        Thread timer = new Thread() {
+            public void run() {
+                for(;;) {
+                    shape.getLocationOnScreen(loc);
+                    triangle.getLocationOnScreen(loc1);
+                    if (loc1.equals(loc)) {
+                        move.reset();
+                    }
+                }
+            }
+        };
+
+        Handler uiCallback = new Handler () {
+            public void handleMessage (Message msg) {
+                // do stuff with UI
+            }
+        };
 
         /*ImageView rocketImage = (ImageView) findViewById(R.id.moving_red_box);
         rocketImage.setBackgroundResource(R.drawable.animation_box);
