@@ -15,6 +15,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.os.Handler;
 import android.os.Message;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -39,6 +40,14 @@ public class StartPage2 extends Activity {
     int i;
     Handler handler;
 
+    TextView red_score;
+    TextView blue_score;
+    TextView green_score;
+
+    int red_score_num = 0;
+    int blue_score_num = 0;
+    int green_score_num = 0;
+
     int[] loc, loc1;
 
     @Override
@@ -53,24 +62,19 @@ public class StartPage2 extends Activity {
         triangle.setRotation(60);
 
         move = AnimationUtils.loadAnimation(this, R.anim.move);
-        move1 = AnimationUtils.loadAnimation(this, R.anim.move1);
+        /*move1 = AnimationUtils.loadAnimation(this, R.anim.move1);
         move2 = AnimationUtils.loadAnimation(this, R.anim.move2);
-        move3 = AnimationUtils.loadAnimation(this, R.anim.move3);
+        move3 = AnimationUtils.loadAnimation(this, R.anim.move3);*/
         color1 = (View) findViewById(R.id.color1);
         color2 = (View) findViewById(R.id.color2);
         color3 = (View) findViewById(R.id.color3);
 
+        red_score = (TextView) findViewById(R.id.red_score);
+        blue_score = (TextView) findViewById(R.id.blue_score);
+        green_score = (TextView) findViewById(R.id.green_score);
+
         color_box_fall_random = new Random();
         handler = new Handler();
-
-        /*move1.setAnimationListener(new Animation.AnimationListener(){
-            @Override
-            public void onAnimationStart(Animation animation){
-
-            }
-
-            @Override
-        });*/
 
         move.setAnimationListener(new Animation.AnimationListener(){
             @Override
@@ -81,23 +85,35 @@ public class StartPage2 extends Activity {
             @Override
             public void onAnimationEnd(Animation animation){
                 i++;
-                if(i < 10){
+                if(i < 1000){
                     handler.postDelayed(new Runnable(){
                         @Override
                         public void run(){
-                            switch(color_box_fall_random.nextInt(2)) {
+                            switch(color_box_fall_random.nextInt(3)) {
                                 case 0:
                                     color1.startAnimation(move);
+                                    color2.clearAnimation();
+                                    color3.clearAnimation();
+                                    red_score_num++;
+                                    red_score.setText("" + red_score_num);
                                     break;
                                 case 1:
                                     color2.startAnimation(move);
+                                    color1.clearAnimation();
+                                    color3.clearAnimation();
+                                    green_score_num++;
+                                    green_score.setText("" + green_score_num);
                                     break;
                                 case 2:
                                     color3.startAnimation(move);
+                                    color1.clearAnimation();
+                                    color2.clearAnimation();
+                                    blue_score_num++;
+                                    blue_score.setText("" + blue_score_num);
                                     break;
                             }
                         }
-                    }, 2000);
+                    }, 10);
                 }
             }
 
@@ -107,23 +123,33 @@ public class StartPage2 extends Activity {
             }
         });
 
-        switch(color_box_fall_random.nextInt(2)){
+        /*red_score.setText("" + red_score_num);
+        green_score.setText("" + green_score_num);
+        blue_score.setText("" + blue_score_num);*/
+
+        switch(color_box_fall_random.nextInt(3)){
             case 0:
                 color1.startAnimation(move);
+                red_score_num++;
+                red_score.setText("" + red_score_num);
                 break;
             case 1:
                 color2.startAnimation(move);
+                green_score_num++;
+                green_score.setText("" + green_score_num);
                 break;
             case 2:
                 color3.startAnimation(move);
+                blue_score_num++;
+                blue_score.setText("" + blue_score_num);
                 break;
         }
 
 
 
-        color1.startAnimation(move1);
+        /*color1.startAnimation(move1);
         color2.startAnimation(move2);
-        color3.startAnimation(move3);
+        color3.startAnimation(move3);*/
 
 
         /*color_box_fall_random = new Random();
@@ -152,7 +178,7 @@ public class StartPage2 extends Activity {
                 color1.getLocationOnScreen(loc);
                 triangle.getLocationOnScreen(loc1);
                 if ((loc1[0] - loc[0]) * (loc1[0] - loc[0]) + (loc1[1] - loc[1]) * (loc1[1] - loc[1]) <= 1000) {
-                    move1.reset();
+                    move.reset();
                 }
                 customHandler.postDelayed(this, 1000);
             }
