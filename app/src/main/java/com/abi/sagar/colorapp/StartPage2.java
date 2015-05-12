@@ -9,10 +9,14 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.os.Handler;
 import android.os.Message;
+
+import java.util.Random;
 
 public class StartPage2 extends Activity {
 
@@ -21,9 +25,16 @@ public class StartPage2 extends Activity {
     Animation rotate3;
     View triangle;
     int currentAnimation = 0;
+    int color_box_fall = 0;
+    Random color_box_fall_random;
+    int random_int;
 
-    Animation move;
-    View shape;
+    Animation move1;
+    Animation move2;
+    Animation move3;
+    View color1;
+    View color2;
+    View color3;
 
     int[] loc, loc1;
 
@@ -32,45 +43,60 @@ public class StartPage2 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_page_two);
 
-        /*Animation rotate = AnimationUtils.loadAnimation(this, R.anim.rotate);
-        findViewById(R.id.triangle1).startAnimation(rotate);*/
-
         rotate1 = AnimationUtils.loadAnimation(this, R.anim.rotate1);
         rotate2 = AnimationUtils.loadAnimation(this, R.anim.rotate2);
         rotate3 = AnimationUtils.loadAnimation(this, R.anim.rotate3);
         triangle = (View) findViewById(R.id.triangle);
         triangle.setRotation(60);
 
-        move = AnimationUtils.loadAnimation(this, R.anim.move);
+        move1 = AnimationUtils.loadAnimation(this, R.anim.move1);
+        move2 = AnimationUtils.loadAnimation(this, R.anim.move2);
+        move3 = AnimationUtils.loadAnimation(this, R.anim.move3);
+        color1 = (View) findViewById(R.id.color1);
+        color2 = (View) findViewById(R.id.color2);
+        color3 = (View) findViewById(R.id.color3);
+
+        color1.startAnimation(move1);
+        color2.startAnimation(move2);
+        color3.startAnimation(move3);
+
+
+        /*color_box_fall_random = new Random();
+        random_int = (color_box_fall_random.nextInt(2));
+
+        for (int i = 0; i < 10; i++){
+            if (random_int == 0){
+                color1.startAnimation(move);
+            }
+            else if (random_int == 1){
+                color2.startAnimation(move);
+            }
+            else{
+                color3.startAnimation(move);
+            }
+        }*/
+
+
         loc = new int[2];
         loc1 = new int[2];
-
-        shape = (View) findViewById(R.id.shape);
-        shape.startAnimation(move);
 
         final android.os.Handler customHandler = new Handler();
 
         Runnable updateTimerThread = new Runnable() {
             public void run() {
-                shape.getLocationOnScreen(loc);
+                color1.getLocationOnScreen(loc);
                 triangle.getLocationOnScreen(loc1);
                 if ((loc1[0] - loc[0]) * (loc1[0] - loc[0]) + (loc1[1] - loc[1]) * (loc1[1] - loc[1]) <= 1000) {
-                    move.reset();
+                    move1.reset();
                 }
                 customHandler.postDelayed(this, 1000);
             }
         };
 
-
         customHandler.postDelayed(updateTimerThread, 0);
 
-
-        /*ImageView rocketImage = (ImageView) findViewById(R.id.moving_red_box);
-        rocketImage.setBackgroundResource(R.drawable.animation_box);
-        AnimationDrawable rocketAnimation = (AnimationDrawable) rocketImage.getBackground();
-        rocketAnimation.start();*/
-
     }
+
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
 

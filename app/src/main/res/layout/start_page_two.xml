@@ -21,13 +21,29 @@
         android:layout_marginTop="50dp"
         android:background="@drawable/triangle"/>-->
 
-    <ImageView
-    android:id="@+id/shape"
-    android:layout_width="35dp"
-    android:layout_height="35dp"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="10dp"
-    android:background="@drawable/box_red"/>
+    <View
+        android:id="@+id/color1"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/box_red"/>
+
+    <View
+        android:id="@+id/color2"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/box_green"/>
+
+    <View
+        android:id="@+id/color3"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/box_blue"/>
 
     <View
         android:id="@+id/triangle"
