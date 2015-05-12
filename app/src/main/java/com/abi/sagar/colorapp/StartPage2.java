@@ -26,15 +26,18 @@ public class StartPage2 extends Activity {
     View triangle;
     int currentAnimation = 0;
     int color_box_fall = 0;
-    Random color_box_fall_random;
     int random_int;
 
+    Animation move;
     Animation move1;
     Animation move2;
     Animation move3;
     View color1;
     View color2;
     View color3;
+    Random color_box_fall_random;
+    int i;
+    Handler handler;
 
     int[] loc, loc1;
 
@@ -49,12 +52,74 @@ public class StartPage2 extends Activity {
         triangle = (View) findViewById(R.id.triangle);
         triangle.setRotation(60);
 
+        move = AnimationUtils.loadAnimation(this, R.anim.move);
         move1 = AnimationUtils.loadAnimation(this, R.anim.move1);
         move2 = AnimationUtils.loadAnimation(this, R.anim.move2);
         move3 = AnimationUtils.loadAnimation(this, R.anim.move3);
         color1 = (View) findViewById(R.id.color1);
         color2 = (View) findViewById(R.id.color2);
         color3 = (View) findViewById(R.id.color3);
+
+        color_box_fall_random = new Random();
+        handler = new Handler();
+
+        /*move1.setAnimationListener(new Animation.AnimationListener(){
+            @Override
+            public void onAnimationStart(Animation animation){
+
+            }
+
+            @Override
+        });*/
+
+        move.setAnimationListener(new Animation.AnimationListener(){
+            @Override
+            public void onAnimationStart(Animation animation){
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation){
+                i++;
+                if(i < 10){
+                    handler.postDelayed(new Runnable(){
+                        @Override
+                        public void run(){
+                            switch(color_box_fall_random.nextInt(2)) {
+                                case 0:
+                                    color1.startAnimation(move);
+                                    break;
+                                case 1:
+                                    color2.startAnimation(move);
+                                    break;
+                                case 2:
+                                    color3.startAnimation(move);
+                                    break;
+                            }
+                        }
+                    }, 2000);
+                }
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation){
+
+            }
+        });
+
+        switch(color_box_fall_random.nextInt(2)){
+            case 0:
+                color1.startAnimation(move);
+                break;
+            case 1:
+                color2.startAnimation(move);
+                break;
+            case 2:
+                color3.startAnimation(move);
+                break;
+        }
+
+
 
         color1.startAnimation(move1);
         color2.startAnimation(move2);
