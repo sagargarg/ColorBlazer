@@ -75,14 +75,17 @@ public class StartPage2 extends Activity {
                 if(i < 100){
                     switch(ballcolor) {
                         case 1:
+                            if (triangle.getRotation() == 300) {
                                 ++red_score_num;
                             }
                             break;
                         case 2:
+                            if (triangle.getRotation() == 60) {
                                 ++green_score_num;
                             }
                             break;
                         case 3:
+                            if (triangle.getRotation() == 180) {
                                 ++blue_score_num;
                             }
                             break;
