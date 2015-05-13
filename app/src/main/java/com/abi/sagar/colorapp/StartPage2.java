@@ -47,12 +47,12 @@ public class StartPage2 extends Activity {
         rotate2 = AnimationUtils.loadAnimation(this, R.anim.rotate2);
         rotate3 = AnimationUtils.loadAnimation(this, R.anim.rotate3);
         triangle = (View) findViewById(R.id.triangle);
-        triangle.setRotation(60);
+        triangle.setRotation(-60);
 
         move = AnimationUtils.loadAnimation(this, R.anim.move);
-        color1 = (View) findViewById(R.id.color1);
-        color2 = (View) findViewById(R.id.color2);
-        color3 = (View) findViewById(R.id.color3);
+        color1 = (View) findViewById(R.id.color1); //red
+        color2 = (View) findViewById(R.id.color2); //green
+        color3 = (View) findViewById(R.id.color3); //blue
 
         red_score = (TextView) findViewById(R.id.red_score);
         blue_score = (TextView) findViewById(R.id.blue_score);
