@@ -19,6 +19,7 @@ public class StartPage2 extends Activity {
     Animation rotate3;
     View triangle;
     int currentAnimation = 0;
+    int ballcolor;
 
     Animation move;
     View color1;
@@ -36,6 +37,7 @@ public class StartPage2 extends Activity {
     int blue_score_num = 0;
     int green_score_num = 0;
 
+
     int[] loc, loc1;
 
     @Override
@@ -47,7 +49,7 @@ public class StartPage2 extends Activity {
         rotate2 = AnimationUtils.loadAnimation(this, R.anim.rotate2);
         rotate3 = AnimationUtils.loadAnimation(this, R.anim.rotate3);
         triangle = (View) findViewById(R.id.triangle);
-        triangle.setRotation(-60);
+        triangle.setRotation(300);
 
         move = AnimationUtils.loadAnimation(this, R.anim.move);
         color1 = (View) findViewById(R.id.color1); //red
@@ -71,6 +73,20 @@ public class StartPage2 extends Activity {
             public void onAnimationEnd(Animation animation){
                 i++;
                 if(i < 100){
+                    switch(ballcolor) {
+                        case 1:
+                                ++red_score_num;
+                            }
+                            break;
+                        case 2:
+                                ++green_score_num;
+                            }
+                            break;
+                        case 3:
+                                ++blue_score_num;
+                            }
+                            break;
+                    }
                     handler.postDelayed(new Runnable(){
                         @Override
                         public void run(){
@@ -79,22 +95,25 @@ public class StartPage2 extends Activity {
                                     color1.startAnimation(move);
                                     color2.clearAnimation();
                                     color3.clearAnimation();
-                                    red_score_num++;
+                                    //red_score_num++;
                                     red_score.setText("" + red_score_num);
+                                    ballcolor = 1;
                                     break;
                                 case 1:
                                     color2.startAnimation(move);
                                     color1.clearAnimation();
                                     color3.clearAnimation();
-                                    green_score_num++;
+                                    //green_score_num++;
                                     green_score.setText("" + green_score_num);
+                                    ballcolor = 2;
                                     break;
                                 case 2:
                                     color3.startAnimation(move);
                                     color1.clearAnimation();
                                     color2.clearAnimation();
-                                    blue_score_num++;
+                                    //blue_score_num++;
                                     blue_score.setText("" + blue_score_num);
+                                    ballcolor = 3;
                                     break;
                             }
                         }
