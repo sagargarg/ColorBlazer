@@ -113,7 +113,7 @@ public class StartPage2 extends Activity {
                                     break;
                             }
                         }
-                    }, 10);
+                    }, 1000);
                 }
             }
 
