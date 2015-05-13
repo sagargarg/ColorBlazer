@@ -73,40 +73,51 @@ public class StartPage2 extends Activity {
             public void onAnimationEnd(Animation animation){
                 i++;
                 if(i < 100){
-                    switch(ballcolor) {
-                        case 1:
-                            if (triangle.getRotation() == 300) {
-                                ++red_score_num;
-                            }
-                            break;
-                        case 2:
-                            if (triangle.getRotation() == 60) {
-                                ++green_score_num;
-                            }
-                            break;
-                        case 3:
-                            if (triangle.getRotation() == 180) {
-                                ++blue_score_num;
-                            }
-                            break;
-                    }
+                    //green_score_num = (int)triangle.getRotation();
+
                     handler.postDelayed(new Runnable(){
                         @Override
                         public void run(){
+                            //red_score.setText("" + ballcolor);
+                            //blue_score.setText("" + currentAnimation);
+                            switch(ballcolor) {
+                                case 1:
+                                    if (currentAnimation == 0) {
+                                        ++red_score_num;
+                                    }
+                                    break;
+                                case 2:
+                                    if (currentAnimation == 1) {
+                                        ++green_score_num;
+                                    }
+                                    break;
+                                case 3:
+                                    if (currentAnimation == 2) {
+                                        ++blue_score_num;
+                                    }
+                                    break;
+                            }
                             switch(color_box_fall_random.nextInt(3)) {
                                 case 0:
                                     color1.startAnimation(move);
                                     color2.clearAnimation();
                                     color3.clearAnimation();
                                     //red_score_num++;
-                                    red_score.setText("" + red_score_num);
+
                                     ballcolor = 1;
+                                    /*if (currentAnimation == 0){
+                                        ++red_score_num;
+                                    }*/
+                                    red_score.setText("" + red_score_num);
                                     break;
                                 case 1:
                                     color2.startAnimation(move);
                                     color1.clearAnimation();
                                     color3.clearAnimation();
                                     //green_score_num++;
+                                    /*if (currentAnimation == 1) {
+                                        ++green_score_num;
+                                    }*/
                                     green_score.setText("" + green_score_num);
                                     ballcolor = 2;
                                     break;
@@ -115,12 +126,15 @@ public class StartPage2 extends Activity {
                                     color1.clearAnimation();
                                     color2.clearAnimation();
                                     //blue_score_num++;
+                                    /*if (currentAnimation == 2) {
+                                        ++blue_score_num;
+                                    }*/
                                     blue_score.setText("" + blue_score_num);
                                     ballcolor = 3;
                                     break;
                             }
                         }
-                    }, 1000);
+                    }, 500);
                 }
             }
 
@@ -133,18 +147,21 @@ public class StartPage2 extends Activity {
         switch(color_box_fall_random.nextInt(3)){
             case 0:
                 color1.startAnimation(move);
-                red_score_num++;
+                //red_score_num++;
                 red_score.setText("" + red_score_num);
+                ballcolor = 1;
                 break;
             case 1:
                 color2.startAnimation(move);
-                green_score_num++;
+                //green_score_num++;
                 green_score.setText("" + green_score_num);
+                ballcolor = 2;
                 break;
             case 2:
                 color3.startAnimation(move);
-                blue_score_num++;
+                //blue_score_num++;
                 blue_score.setText("" + blue_score_num);
+                ballcolor = 3;
                 break;
         }
 
