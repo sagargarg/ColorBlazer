@@ -1,20 +1,13 @@
 package com.abi.sagar.colorapp;
 
 import android.app.Activity;
-import android.appwidget.AppWidgetManager;
-import android.content.Context;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
-import android.view.animation.TranslateAnimation;
-import android.widget.ImageView;
 import android.os.Handler;
-import android.os.Message;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -26,13 +19,8 @@ public class StartPage2 extends Activity {
     Animation rotate3;
     View triangle;
     int currentAnimation = 0;
-    int color_box_fall = 0;
-    int random_int;
 
     Animation move;
-    Animation move1;
-    Animation move2;
-    Animation move3;
     View color1;
     View color2;
     View color3;
@@ -62,9 +50,6 @@ public class StartPage2 extends Activity {
         triangle.setRotation(60);
 
         move = AnimationUtils.loadAnimation(this, R.anim.move);
-        /*move1 = AnimationUtils.loadAnimation(this, R.anim.move1);
-        move2 = AnimationUtils.loadAnimation(this, R.anim.move2);
-        move3 = AnimationUtils.loadAnimation(this, R.anim.move3);*/
         color1 = (View) findViewById(R.id.color1);
         color2 = (View) findViewById(R.id.color2);
         color3 = (View) findViewById(R.id.color3);
@@ -85,7 +70,7 @@ public class StartPage2 extends Activity {
             @Override
             public void onAnimationEnd(Animation animation){
                 i++;
-                if(i < 1000){
+                if(i < 100){
                     handler.postDelayed(new Runnable(){
                         @Override
                         public void run(){
@@ -123,10 +108,6 @@ public class StartPage2 extends Activity {
             }
         });
 
-        /*red_score.setText("" + red_score_num);
-        green_score.setText("" + green_score_num);
-        blue_score.setText("" + blue_score_num);*/
-
         switch(color_box_fall_random.nextInt(3)){
             case 0:
                 color1.startAnimation(move);
@@ -144,29 +125,6 @@ public class StartPage2 extends Activity {
                 blue_score.setText("" + blue_score_num);
                 break;
         }
-
-
-
-        /*color1.startAnimation(move1);
-        color2.startAnimation(move2);
-        color3.startAnimation(move3);*/
-
-
-        /*color_box_fall_random = new Random();
-        random_int = (color_box_fall_random.nextInt(2));
-
-        for (int i = 0; i < 10; i++){
-            if (random_int == 0){
-                color1.startAnimation(move);
-            }
-            else if (random_int == 1){
-                color2.startAnimation(move);
-            }
-            else{
-                color3.startAnimation(move);
-            }
-        }*/
-
 
         loc = new int[2];
         loc1 = new int[2];
