@@ -38,9 +38,9 @@ public class StartPage2 extends Activity {
     TextView total_score;
     TextView text;
 
-    int red_score_num = 0;
-    int blue_score_num = 0;
-    int green_score_num = 0;
+    public static int red_score_num = 0;
+    public static int blue_score_num = 0;
+    public static int green_score_num = 0;
     public static int total_score_num = 0;
 
     int duration = 2000;

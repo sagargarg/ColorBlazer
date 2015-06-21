@@ -49,6 +49,9 @@ public class EndPage extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.replay_button:
+                StartPage2.red_score_num = 0;
+                StartPage2.blue_score_num = 0;
+                StartPage2.green_score_num = 0;
                 Intent intent = new Intent(this, StartPage2.class);
                 startActivity(intent);
                 break;
