@@ -1,6 +1,8 @@
 package com.abi.sagar.colorapp;
 
+import android.animation.AnimatorSet;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -33,9 +35,16 @@ public class StartPage2 extends Activity {
     TextView blue_score;
     TextView green_score;
 
+    TextView total_score;
+    TextView text;
+
     int red_score_num = 0;
     int blue_score_num = 0;
     int green_score_num = 0;
+    public static int total_score_num = 0;
+
+    int duration = 2000;
+    TextView duration_num;
 
 
     int[] loc, loc1;
@@ -59,9 +68,15 @@ public class StartPage2 extends Activity {
         red_score = (TextView) findViewById(R.id.red_score);
         blue_score = (TextView) findViewById(R.id.blue_score);
         green_score = (TextView) findViewById(R.id.green_score);
+        total_score = (TextView) findViewById(R.id.total_score);
+        text = (TextView) findViewById(R.id.text);
+
+        duration_num = (TextView) findViewById(R.id.duration_num);
 
         color_box_fall_random = new Random();
         handler = new Handler();
+
+        move.setDuration(duration);
 
         move.setAnimationListener(new Animation.AnimationListener(){
             @Override
@@ -80,20 +95,165 @@ public class StartPage2 extends Activity {
                         public void run(){
                             //red_score.setText("" + ballcolor);
                             //blue_score.setText("" + currentAnimation);
+                            //red_score.setText("ball: " + ballcolor + " animation: " + currentAnimation);
                             switch(ballcolor) {
                                 case 1:
                                     if (currentAnimation == 0) {
                                         ++red_score_num;
+                                        total_score_num ++;
+                                        total_score.setText("" + total_score_num);
+                                        red_score.setText("" + red_score_num);
+                                        text.setText("Red");
+                                        if (total_score_num > 0 && total_score_num <= 5){
+                                            duration -= (total_score_num)*8;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 5 && total_score_num <= 10){
+                                            duration -= (total_score_num)*5;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 10 && total_score_num <= 15){
+                                            duration -= (total_score_num)*4;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 15 && total_score_num <= 20){
+                                            duration -= (total_score_num)*3;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 20 && total_score_num <= 25){
+                                            duration -= (total_score_num)*2;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 25 && total_score_num <= 30){
+                                            duration -= (total_score_num)*1;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 30 && total_score_num <= 40){
+                                            duration -= 2;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 40){
+                                            duration = 760;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                    }
+                                    else {
+                                        Intent intent = new Intent(getApplicationContext(),EndPage.class);
+                                        startActivity(intent);
                                     }
                                     break;
                                 case 2:
                                     if (currentAnimation == 1) {
                                         ++green_score_num;
+                                        total_score_num ++;
+                                        total_score.setText("" + total_score_num);
+                                        green_score.setText("" + green_score_num);
+                                        text.setText("Green");
+                                        if (total_score_num > 0 && total_score_num <= 5){
+                                            duration -= (total_score_num)*8;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 5 && total_score_num <= 10){
+                                            duration -= (total_score_num)*5;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 10 && total_score_num <= 15){
+                                            duration -= (total_score_num)*4;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 15 && total_score_num <= 20){
+                                            duration -= (total_score_num)*3;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 20 && total_score_num <= 25){
+                                            duration -= (total_score_num)*2;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 25 && total_score_num <= 30){
+                                            duration -= (total_score_num)*1;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 30 && total_score_num <= 40){
+                                            duration -= 2;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 40){
+                                            duration = 760;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                    }
+                                    else {
+                                        Intent intent = new Intent(getApplicationContext(),EndPage.class);
+                                        startActivity(intent);
                                     }
                                     break;
                                 case 3:
                                     if (currentAnimation == 2) {
                                         ++blue_score_num;
+                                        total_score_num ++;
+                                        total_score.setText("" + total_score_num);
+                                        blue_score.setText("" + blue_score_num);
+                                        text.setText("Blue");
+                                        if (total_score_num > 0 && total_score_num <= 5){
+                                            duration -= (total_score_num)*8;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 5 && total_score_num <= 10){
+                                            duration -= (total_score_num)*5;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 10 && total_score_num <= 15){
+                                            duration -= (total_score_num)*4;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 15 && total_score_num <= 20){
+                                            duration -= (total_score_num)*3;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 20 && total_score_num <= 25){
+                                            duration -= (total_score_num)*2;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 25 && total_score_num <= 30){
+                                            duration -= (total_score_num)*1;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 30 && total_score_num <= 40){
+                                            duration -= 2;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 40){
+                                            duration = 760;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                    }
+                                    else {
+                                        Intent intent = new Intent(getApplicationContext(),EndPage.class);
+                                        startActivity(intent);
                                     }
                                     break;
                             }
@@ -108,7 +268,7 @@ public class StartPage2 extends Activity {
                                     /*if (currentAnimation == 0){
                                         ++red_score_num;
                                     }*/
-                                    red_score.setText("" + red_score_num);
+                                    //red_score.setText("" + red_score_num);
                                     break;
                                 case 1:
                                     color2.startAnimation(move);
@@ -118,7 +278,7 @@ public class StartPage2 extends Activity {
                                     /*if (currentAnimation == 1) {
                                         ++green_score_num;
                                     }*/
-                                    green_score.setText("" + green_score_num);
+                                    //green_score.setText("" + green_score_num);
                                     ballcolor = 2;
                                     break;
                                 case 2:
@@ -129,12 +289,12 @@ public class StartPage2 extends Activity {
                                     /*if (currentAnimation == 2) {
                                         ++blue_score_num;
                                     }*/
-                                    blue_score.setText("" + blue_score_num);
+                                    //blue_score.setText("" + blue_score_num);
                                     ballcolor = 3;
                                     break;
                             }
                         }
-                    }, 500);
+                    }, 10);
                 }
             }
 
@@ -148,19 +308,19 @@ public class StartPage2 extends Activity {
             case 0:
                 color1.startAnimation(move);
                 //red_score_num++;
-                red_score.setText("" + red_score_num);
+                //red_score.setText("" + red_score_num);
                 ballcolor = 1;
                 break;
             case 1:
                 color2.startAnimation(move);
                 //green_score_num++;
-                green_score.setText("" + green_score_num);
+                //green_score.setText("" + green_score_num);
                 ballcolor = 2;
                 break;
             case 2:
                 color3.startAnimation(move);
                 //blue_score_num++;
-                blue_score.setText("" + blue_score_num);
+                //blue_score.setText("" + blue_score_num);
                 ballcolor = 3;
                 break;
         }
