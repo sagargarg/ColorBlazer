@@ -28,11 +28,29 @@ public class EndPage extends Activity implements View.OnClickListener {
         highscore = (TextView) findViewById(R.id.highscore);
         score = (TextView) findViewById(R.id.score);
 
-        highscore_num = 45;
+        highscore_num = 0;
+
+        if (StartPage2.total_score_num > 0){
+            if (StartPage2.total_score_num > highscore_num){
+                highscore_num = StartPage2.total_score_num;
+                highscore.setText("Best: " + highscore_num);
+                score.setText("Score: " + highscore_num);
+            }
+            else {
+                highscore.setText("Best: " + highscore_num);
+                score.setText("Score: " + StartPage2.total_score_num);
+            }
+        }
+
+        else {
+            highscore.setText("Best: " + highscore_num);
+            score.setText("Score: 0");
+        }
 
 
-        highscore.setText("High Score" + highscore);
-        score.setText("Score: " + StartPage2.total_score_num);
+
+
+
 
         /*Intent intent = new Intent(getApplicationContext(),EndPage.class);
         startActivity(intent);*/

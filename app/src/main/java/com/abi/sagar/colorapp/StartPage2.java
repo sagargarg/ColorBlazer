@@ -1,6 +1,5 @@
 package com.abi.sagar.colorapp;
 
-import android.animation.AnimatorSet;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -57,13 +56,13 @@ public class StartPage2 extends Activity {
         rotate1 = AnimationUtils.loadAnimation(this, R.anim.rotate1);
         rotate2 = AnimationUtils.loadAnimation(this, R.anim.rotate2);
         rotate3 = AnimationUtils.loadAnimation(this, R.anim.rotate3);
-        triangle = (View) findViewById(R.id.triangle);
+        triangle = findViewById(R.id.triangle);
         triangle.setRotation(300);
 
         move = AnimationUtils.loadAnimation(this, R.anim.move);
-        color1 = (View) findViewById(R.id.color1); //red
-        color2 = (View) findViewById(R.id.color2); //green
-        color3 = (View) findViewById(R.id.color3); //blue
+        color1 = findViewById(R.id.color1); //red
+        color2 = findViewById(R.id.color2); //green
+        color3 = findViewById(R.id.color3); //blue
 
         red_score = (TextView) findViewById(R.id.red_score);
         blue_score = (TextView) findViewById(R.id.blue_score);
@@ -86,21 +85,26 @@ public class StartPage2 extends Activity {
 
             @Override
             public void onAnimationEnd(Animation animation){
+                if ((red_score_num + blue_score_num + green_score_num) == 0){
+                    total_score_num = 0;
+                }
+
                 i++;
                 if(i < 100){
-                    //green_score_num = (int)triangle.getRotation();
-
                     handler.postDelayed(new Runnable(){
                         @Override
                         public void run(){
                             //red_score.setText("" + ballcolor);
                             //blue_score.setText("" + currentAnimation);
                             //red_score.setText("ball: " + ballcolor + " animation: " + currentAnimation);
+
+
+
                             switch(ballcolor) {
                                 case 1:
                                     if (currentAnimation == 0) {
                                         ++red_score_num;
-                                        total_score_num ++;
+                                        ++total_score_num;
                                         total_score.setText("" + total_score_num);
                                         red_score.setText("" + red_score_num);
                                         text.setText("Red");
@@ -153,7 +157,7 @@ public class StartPage2 extends Activity {
                                 case 2:
                                     if (currentAnimation == 1) {
                                         ++green_score_num;
-                                        total_score_num ++;
+                                        ++total_score_num;
                                         total_score.setText("" + total_score_num);
                                         green_score.setText("" + green_score_num);
                                         text.setText("Green");
@@ -206,7 +210,7 @@ public class StartPage2 extends Activity {
                                 case 3:
                                     if (currentAnimation == 2) {
                                         ++blue_score_num;
-                                        total_score_num ++;
+                                        ++total_score_num;
                                         total_score.setText("" + total_score_num);
                                         blue_score.setText("" + blue_score_num);
                                         text.setText("Blue");
