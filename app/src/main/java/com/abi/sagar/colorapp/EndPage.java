@@ -33,23 +33,19 @@ public class EndPage extends Activity implements View.OnClickListener {
         if (StartPage2.total_score_num > 0){
             if (StartPage2.total_score_num > highscore_num){
                 highscore_num = StartPage2.total_score_num;
-                highscore.setText("Best: " + highscore_num);
-                score.setText("Score: " + highscore_num);
+                highscore.setText("" + highscore_num);
+                score.setText("" + highscore_num);
             }
             else {
-                highscore.setText("Best: " + highscore_num);
-                score.setText("Score: " + StartPage2.total_score_num);
+                highscore.setText("" + highscore_num);
+                score.setText("" + StartPage2.total_score_num);
             }
         }
 
         else {
-            highscore.setText("Best: " + highscore_num);
-            score.setText("Score: 0");
+            highscore.setText("" + highscore_num);
+            score.setText("0");
         }
-
-
-
-
 
 
         /*Intent intent = new Intent(getApplicationContext(),EndPage.class);

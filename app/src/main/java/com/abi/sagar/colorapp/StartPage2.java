@@ -40,11 +40,10 @@ public class StartPage2 extends Activity {
     public static int red_score_num = 0;
     public static int blue_score_num = 0;
     public static int green_score_num = 0;
-    public static int total_score_num = 0;
+    protected static int total_score_num = 0;
 
     int duration = 2000;
     TextView duration_num;
-
 
     int[] loc, loc1;
 
@@ -74,8 +73,12 @@ public class StartPage2 extends Activity {
 
         color_box_fall_random = new Random();
         handler = new Handler();
-
         move.setDuration(duration);
+
+        red_score_num = 0;
+        blue_score_num = 0;
+        green_score_num = 0;
+        total_score_num = 0;
 
         move.setAnimationListener(new Animation.AnimationListener(){
             @Override
@@ -85,9 +88,6 @@ public class StartPage2 extends Activity {
 
             @Override
             public void onAnimationEnd(Animation animation){
-                if ((red_score_num + blue_score_num + green_score_num) == 0){
-                    total_score_num = 0;
-                }
 
                 i++;
                 if(i < 100){
@@ -97,8 +97,6 @@ public class StartPage2 extends Activity {
                             //red_score.setText("" + ballcolor);
                             //blue_score.setText("" + currentAnimation);
                             //red_score.setText("ball: " + ballcolor + " animation: " + currentAnimation);
-
-
 
                             switch(ballcolor) {
                                 case 1:
