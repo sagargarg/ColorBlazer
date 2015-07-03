@@ -46,7 +46,7 @@ public class StartPage2 extends Activity {
     protected static int total_score_num = 0;
     public static int high_score = 0;
 
-    int duration = 2000;
+    int duration = 1800;
     TextView duration_num;
 
     int[] loc, loc1;
