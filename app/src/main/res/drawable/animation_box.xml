@@ -3,5 +3,4 @@
     <item android:drawable="@drawable/box_red" android:duration="300" />
     <item android:drawable="@drawable/box_blue" android:duration="300" />
     <item android:drawable="@drawable/box_green" android:duration="300" />
-    <item android:drawable="@drawable/box_yellow" android:duration="300" />
 </animation-list>

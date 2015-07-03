@@ -4,6 +4,5 @@
     <item android:drawable="@drawable/start_button_red" android:duration="300" />
     <item android:drawable="@drawable/start_button_green" android:duration="300" />
     <item android:drawable="@drawable/start_button_blue" android:duration="300" />
-    <item android:drawable="@drawable/start_button_yellow" android:duration="300" />
 
 </animation-list>

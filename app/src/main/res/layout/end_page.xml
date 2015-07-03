@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="35dp"
         android:text="Game Over!"
         android:textColor="#000"
         android:textStyle="bold"
@@ -23,9 +23,9 @@
 
     <View
         android:id="@+id/scores"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="125dp"
+        android:layout_width="@dimen/score_width"
+        android:layout_height="190dp"
+        android:layout_marginTop="120dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/score_box"
 
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="130dp"
         android:text="Score"
         android:textSize="30sp" />
 
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="175dp"
+        android:layout_marginTop="165dp"
         android:text="11"
         android:textStyle="bold"
         android:textSize="40sp" />
@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="220dp"
         android:text="Best"
         android:textSize="30sp" />
 
@@ -64,12 +64,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="265dp"
+        android:layout_marginTop="255dp"
         android:text="11"
         android:textStyle="bold"
         android:textSize="40sp" />
 
-    <Button
+    <!--<Button
         android:id="@+id/replay_button"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="150dp"
@@ -79,9 +79,20 @@
         android:background="@drawable/start_button_selector"
         android:text="Replay"
         android:textColor="#fff"
-        android:textSize="20sp" />
+        android:textSize="20sp" />-->
 
     <Button
+        android:id="@+id/replay_button"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="@dimen/score_width"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="320dp"
+        android:background="@drawable/score_box"
+        android:text="Replay"
+        android:textSize="25sp" />
+
+    <!--<Button
         android:id="@+id/home_button"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="125dp"
@@ -91,17 +102,39 @@
         android:text="Home"
         android:textColor="#fff"
         android:textSize="20sp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true" />-->
 
     <Button
+        android:id="@+id/home_button"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="@dimen/score_width"
+        android:layout_height=" 50dp"
+        android:layout_marginTop="400dp"
+        android:background="@drawable/score_box"
+        android:text="Home"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true" />
+
+    <!--<Button
         android:id="@+id/nothing_button"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="490dp"
         android:background="@drawable/start_button_selector"
-        android:text="Nothing"
+        android:text="Rate"
         android:textColor="#fff"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true" />-->
+
+    <Button
+        android:id="@+id/nothing_button"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="@dimen/score_width"
+        android:layout_height="50dp"
+        android:layout_marginTop="460dp"
+        android:background="@drawable/score_box"
+        android:text="Rate"
         android:textSize="20sp"
         android:layout_centerHorizontal="true" />
 

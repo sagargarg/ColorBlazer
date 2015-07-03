@@ -19,7 +19,8 @@
         </activity>
         <activity
             android:name=".StartPage"
-            android:label="@string/title_startpage">
+            android:label="@string/title_startpage"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".StartPage2"
