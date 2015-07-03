@@ -88,7 +88,10 @@ public class StartPage2 extends Activity {
         green_score_num = 0;
         total_score_num = 0;
 
+
+
         move.setAnimationListener(new Animation.AnimationListener(){
+
             @Override
             public void onAnimationStart(Animation animation){
 
@@ -389,16 +392,12 @@ public class StartPage2 extends Activity {
 
 What do we need to do
 
-Save High Score
-Fix Speed of animation (too fast at the end, too slow at the beginning
 Convert dp into pixels based on the pixels per inch on different phones
     This is for the ball animation, and how fas the ball should fall
 Tap to Start
-Counter for games played
-Improve the design of the game
+Prevent User from going back to previous changes, and set was pages to go to
 Integrate Google Game into the app
 Find out how to implement ads
 Name and App Icon
-Prevent User from going back to previous changes, and set was pages to go to
 
 */
