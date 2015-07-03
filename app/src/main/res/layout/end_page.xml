@@ -21,6 +21,17 @@
         android:textStyle="bold"
         android:textSize="50sp" />
 
+    <TextView
+        android:id="@+id/gameover2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="New High Score!"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="42sp" />
+
     <View
         android:id="@+id/scores"
         android:layout_width="@dimen/score_width"
