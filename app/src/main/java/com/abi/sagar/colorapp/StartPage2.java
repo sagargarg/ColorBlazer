@@ -33,16 +33,15 @@ public class StartPage2 extends Activity {
     int i;
     Handler handler;
 
-    TextView red_score;
-    TextView blue_score;
-    TextView green_score;
-
     TextView total_score;
-    TextView text;
 
+    /*TextView red_score;
+    TextView blue_score;
+    TextView green_score;TextView text;
     public static int red_score_num = 0;
     public static int blue_score_num = 0;
-    public static int green_score_num = 0;
+    public static int green_score_num = 0;*/
+
     protected static int total_score_num = 0;
     public static int high_score = 0;
     public static boolean new_high;
@@ -71,35 +70,30 @@ public class StartPage2 extends Activity {
         color2 = findViewById(R.id.color2); //green
         color3 = findViewById(R.id.color3); //blue
 
-        red_score = (TextView) findViewById(R.id.red_score);
+        /*red_score = (TextView) findViewById(R.id.red_score);
         blue_score = (TextView) findViewById(R.id.blue_score);
         green_score = (TextView) findViewById(R.id.green_score);
-        total_score = (TextView) findViewById(R.id.total_score);
-        text = (TextView) findViewById(R.id.text);
+        text = (TextView) findViewById(R.id.text);*/
 
+        total_score = (TextView) findViewById(R.id.total_score);
         duration_num = (TextView) findViewById(R.id.duration_num);
 
         color_box_fall_random = new Random();
         handler = new Handler();
         move.setDuration(duration);
-
-        red_score_num = 0;
-        blue_score_num = 0;
-        green_score_num = 0;
         total_score_num = 0;
 
-
+        /*red_score_num = 0;
+        blue_score_num = 0;
+        green_score_num = 0;*/
 
         move.setAnimationListener(new Animation.AnimationListener(){
-
             @Override
             public void onAnimationStart(Animation animation){
-
             }
 
             @Override
             public void onAnimationEnd(Animation animation){
-
                 i++;
                 if(i < 100){
                     handler.postDelayed(new Runnable(){
@@ -112,11 +106,11 @@ public class StartPage2 extends Activity {
                             switch(ballcolor) {
                                 case 1:
                                     if (currentAnimation == 0) {
-                                        ++red_score_num;
+                                        //++red_score_num;
                                         ++total_score_num;
                                         total_score.setText("" + total_score_num);
-                                        red_score.setText("" + red_score_num);
-                                        text.setText("Red");
+                                        //red_score.setText("" + red_score_num);
+                                        //text.setText("Red");
                                         if (total_score_num == 0){
                                             duration = 1800;
                                             move.setDuration(duration);
@@ -166,11 +160,11 @@ public class StartPage2 extends Activity {
                                     break;
                                 case 2:
                                     if (currentAnimation == 1) {
-                                        ++green_score_num;
+                                        //++green_score_num;
                                         ++total_score_num;
                                         total_score.setText("" + total_score_num);
-                                        green_score.setText("" + green_score_num);
-                                        text.setText("Green");
+                                        //green_score.setText("" + green_score_num);
+                                        //text.setText("Green");
                                         if (total_score_num == 0){
                                             duration = 1800;
                                             move.setDuration(duration);
@@ -219,11 +213,11 @@ public class StartPage2 extends Activity {
                                     break;
                                 case 3:
                                     if (currentAnimation == 2) {
-                                        ++blue_score_num;
+                                        //++blue_score_num;
                                         ++total_score_num;
                                         total_score.setText("" + total_score_num);
-                                        blue_score.setText("" + blue_score_num);
-                                        text.setText("Blue");
+                                        //blue_score.setText("" + blue_score_num);
+                                        //text.setText("Blue");
                                         if (total_score_num == 0){
                                             duration = 1800;
                                             move.setDuration(duration);
