@@ -253,6 +253,7 @@ public class StartPage2 extends Activity {
 
                                         SharedPreferences.Editor editor = settings2.edit();
                                         editor.putInt("high_score", high_score);
+                                        editor.commit();
 
                                         Intent intent = new Intent(getApplicationContext(),EndPage.class);
                                         startActivity(intent);
