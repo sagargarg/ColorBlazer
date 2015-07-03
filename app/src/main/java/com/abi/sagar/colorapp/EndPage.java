@@ -27,15 +27,8 @@ public class EndPage extends Activity implements View.OnClickListener {
         highscore = (TextView) findViewById(R.id.highscore);
         score = (TextView) findViewById(R.id.score);
 
-
-        if (StartPage2.total_score_num > 0){
-                highscore.setText("" + StartPage2.high_score);
-                score.setText("" + StartPage2.total_score_num);
-        }
-        else {
-            highscore.setText("" + StartPage2.high_score);
-            score.setText("0");
-        }
+        highscore.setText("" + StartPage2.high_score);
+        score.setText("" + StartPage2.total_score_num);
 
 
         /*Intent intent = new Intent(getApplicationContext(),EndPage.class);
