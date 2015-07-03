@@ -112,43 +112,33 @@ public class StartPage2 extends Activity {
                                         total_score.setText("" + total_score_num);
                                         red_score.setText("" + red_score_num);
                                         text.setText("Red");
-                                        if (total_score_num > 0 && total_score_num <= 5){
-                                            duration -= (total_score_num)*8;
+                                        if (total_score_num == 0){
+                                            duration = 1800;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 0 && total_score_num <= 5){
+                                            duration -= (total_score_num)*9;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
                                         else if (total_score_num > 5 && total_score_num <= 10){
-                                            duration -= (total_score_num)*5;
+                                            duration -= (total_score_num)*6;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
-                                        else if (total_score_num > 10 && total_score_num <= 15){
-                                            duration -= (total_score_num)*4;
-                                            move.setDuration(duration);
-                                            duration_num.setText("" + duration);
-                                        }
-                                        else if (total_score_num > 15 && total_score_num <= 20){
+                                        else if (total_score_num > 11 && total_score_num <= 19){
                                             duration -= (total_score_num)*3;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
-                                        else if (total_score_num > 20 && total_score_num <= 25){
-                                            duration -= (total_score_num)*2;
-                                            move.setDuration(duration);
-                                            duration_num.setText("" + duration);
-                                        }
-                                        else if (total_score_num > 25 && total_score_num <= 30){
+                                        else if (total_score_num > 20 && total_score_num <= 28){
                                             duration -= (total_score_num)*1;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
-                                        else if (total_score_num > 30 && total_score_num <= 40){
-                                            duration -= 2;
-                                            move.setDuration(duration);
-                                            duration_num.setText("" + duration);
-                                        }
-                                        else if (total_score_num > 40){
-                                            duration = 760;
+                                        else if (total_score_num > 29){
+                                            duration = 800;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
@@ -173,48 +163,46 @@ public class StartPage2 extends Activity {
                                         total_score.setText("" + total_score_num);
                                         green_score.setText("" + green_score_num);
                                         text.setText("Green");
-                                        if (total_score_num > 0 && total_score_num <= 5){
-                                            duration -= (total_score_num)*8;
+                                        if (total_score_num == 0){
+                                            duration = 1800;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 0 && total_score_num <= 5){
+                                            duration -= (total_score_num)*9;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
                                         else if (total_score_num > 5 && total_score_num <= 10){
-                                            duration -= (total_score_num)*5;
+                                            duration -= (total_score_num)*6;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
-                                        else if (total_score_num > 10 && total_score_num <= 15){
-                                            duration -= (total_score_num)*4;
-                                            move.setDuration(duration);
-                                            duration_num.setText("" + duration);
-                                        }
-                                        else if (total_score_num > 15 && total_score_num <= 20){
+                                        else if (total_score_num > 11 && total_score_num <= 19){
                                             duration -= (total_score_num)*3;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
-                                        else if (total_score_num > 20 && total_score_num <= 25){
-                                            duration -= (total_score_num)*2;
-                                            move.setDuration(duration);
-                                            duration_num.setText("" + duration);
-                                        }
-                                        else if (total_score_num > 25 && total_score_num <= 30){
+                                        else if (total_score_num > 20 && total_score_num <= 28){
                                             duration -= (total_score_num)*1;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
-                                        else if (total_score_num > 30 && total_score_num <= 40){
-                                            duration -= 2;
-                                            move.setDuration(duration);
-                                            duration_num.setText("" + duration);
-                                        }
-                                        else if (total_score_num > 40){
-                                            duration = 760;
+                                        else if (total_score_num > 29){
+                                            duration = 800;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
                                     }
                                     else {
+                                        if (total_score_num > high_score) {
+                                            high_score = total_score_num;
+                                        }
+                                        SharedPreferences settings2 = getSharedPreferences("high_score", 0);
+
+                                        SharedPreferences.Editor editor = settings2.edit();
+                                        editor.putInt("high_score", high_score);
+
                                         Intent intent = new Intent(getApplicationContext(),EndPage.class);
                                         startActivity(intent);
                                     }
@@ -226,48 +214,46 @@ public class StartPage2 extends Activity {
                                         total_score.setText("" + total_score_num);
                                         blue_score.setText("" + blue_score_num);
                                         text.setText("Blue");
-                                        if (total_score_num > 0 && total_score_num <= 5){
-                                            duration -= (total_score_num)*8;
+                                        if (total_score_num == 0){
+                                            duration = 1800;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num > 0 && total_score_num <= 5){
+                                            duration -= (total_score_num)*9;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
                                         else if (total_score_num > 5 && total_score_num <= 10){
-                                            duration -= (total_score_num)*5;
+                                            duration -= (total_score_num)*6;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
-                                        else if (total_score_num > 10 && total_score_num <= 15){
-                                            duration -= (total_score_num)*4;
-                                            move.setDuration(duration);
-                                            duration_num.setText("" + duration);
-                                        }
-                                        else if (total_score_num > 15 && total_score_num <= 20){
+                                        else if (total_score_num > 11 && total_score_num <= 19){
                                             duration -= (total_score_num)*3;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
-                                        else if (total_score_num > 20 && total_score_num <= 25){
-                                            duration -= (total_score_num)*2;
-                                            move.setDuration(duration);
-                                            duration_num.setText("" + duration);
-                                        }
-                                        else if (total_score_num > 25 && total_score_num <= 30){
+                                        else if (total_score_num > 20 && total_score_num <= 28){
                                             duration -= (total_score_num)*1;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
-                                        else if (total_score_num > 30 && total_score_num <= 40){
-                                            duration -= 2;
-                                            move.setDuration(duration);
-                                            duration_num.setText("" + duration);
-                                        }
-                                        else if (total_score_num > 40){
-                                            duration = 760;
+                                        else if (total_score_num > 29){
+                                            duration = 800;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
                                     }
                                     else {
+                                        if (total_score_num > high_score) {
+                                            high_score = total_score_num;
+                                        }
+                                        SharedPreferences settings2 = getSharedPreferences("high_score", 0);
+
+                                        SharedPreferences.Editor editor = settings2.edit();
+                                        editor.putInt("high_score", high_score);
+
                                         Intent intent = new Intent(getApplicationContext(),EndPage.class);
                                         startActivity(intent);
                                     }
