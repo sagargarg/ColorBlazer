@@ -1,7 +1,9 @@
 package com.abi.sagar.colorapp;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -11,6 +13,7 @@ import android.view.animation.AnimationUtils;
 import android.os.Handler;
 import android.widget.TextView;
 
+import java.io.FileOutputStream;
 import java.util.Random;
 
 public class StartPage2 extends Activity {
@@ -41,6 +44,7 @@ public class StartPage2 extends Activity {
     public static int blue_score_num = 0;
     public static int green_score_num = 0;
     protected static int total_score_num = 0;
+    public static int high_score = 0;
 
     int duration = 2000;
     TextView duration_num;
@@ -50,6 +54,8 @@ public class StartPage2 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences settings = getSharedPreferences("high_score", 0);
+        high_score = settings.getInt("high_score", 0);
         setContentView(R.layout.start_page_two);
 
         rotate1 = AnimationUtils.loadAnimation(this, R.anim.rotate1);
@@ -148,6 +154,14 @@ public class StartPage2 extends Activity {
                                         }
                                     }
                                     else {
+                                        if (total_score_num > high_score) {
+                                            high_score = total_score_num;
+                                        }
+                                        SharedPreferences settings2 = getSharedPreferences("high_score", 0);
+
+                                        SharedPreferences.Editor editor = settings2.edit();
+                                        editor.putInt("high_score", high_score);
+
                                         Intent intent = new Intent(getApplicationContext(),EndPage.class);
                                         startActivity(intent);
                                     }

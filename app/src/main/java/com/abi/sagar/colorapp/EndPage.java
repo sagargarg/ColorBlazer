@@ -43,7 +43,7 @@ public class EndPage extends Activity implements View.OnClickListener {
         }
 
         else {
-            highscore.setText("" + highscore_num);
+            highscore.setText("" + StartPage2.high_score);
             score.setText("0");
         }
 
