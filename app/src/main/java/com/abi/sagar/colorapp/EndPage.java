@@ -12,7 +12,6 @@ public class EndPage extends Activity implements View.OnClickListener {
 
     public static TextView score;
     public static TextView highscore;
-    public static int highscore_num;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,20 +27,11 @@ public class EndPage extends Activity implements View.OnClickListener {
         highscore = (TextView) findViewById(R.id.highscore);
         score = (TextView) findViewById(R.id.score);
 
-        highscore_num = 0;
 
         if (StartPage2.total_score_num > 0){
-            if (StartPage2.total_score_num > highscore_num){
-                highscore_num = StartPage2.total_score_num;
-                highscore.setText("" + highscore_num);
-                score.setText("" + highscore_num);
-            }
-            else {
-                highscore.setText("" + highscore_num);
+                highscore.setText("" + StartPage2.high_score);
                 score.setText("" + StartPage2.total_score_num);
-            }
         }
-
         else {
             highscore.setText("" + StartPage2.high_score);
             score.setText("0");
