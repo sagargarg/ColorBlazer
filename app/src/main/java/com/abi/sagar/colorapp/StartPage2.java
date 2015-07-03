@@ -45,6 +45,7 @@ public class StartPage2 extends Activity {
     public static int green_score_num = 0;
     protected static int total_score_num = 0;
     public static int high_score = 0;
+    public static boolean new_high;
 
     int duration = 1800;
     TextView duration_num;
@@ -53,6 +54,7 @@ public class StartPage2 extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        new_high = false;
         super.onCreate(savedInstanceState);
         SharedPreferences settings = getSharedPreferences("high_score", 0);
         high_score = settings.getInt("high_score", 0);
@@ -146,7 +148,9 @@ public class StartPage2 extends Activity {
                                     else {
                                         if (total_score_num > high_score) {
                                             high_score = total_score_num;
+                                            new_high = true;
                                         }
+
                                         SharedPreferences settings2 = getSharedPreferences("high_score", 0);
 
                                         SharedPreferences.Editor editor = settings2.edit();
@@ -198,6 +202,7 @@ public class StartPage2 extends Activity {
                                     else {
                                         if (total_score_num > high_score) {
                                             high_score = total_score_num;
+                                            new_high = true;
                                         }
                                         SharedPreferences settings2 = getSharedPreferences("high_score", 0);
 
@@ -250,6 +255,7 @@ public class StartPage2 extends Activity {
                                     else {
                                         if (total_score_num > high_score) {
                                             high_score = total_score_num;
+                                            new_high = true;
                                         }
                                         SharedPreferences settings2 = getSharedPreferences("high_score", 0);
 

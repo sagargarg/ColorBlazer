@@ -12,6 +12,7 @@ public class EndPage extends Activity implements View.OnClickListener {
 
     public static TextView score;
     public static TextView highscore;
+    public static TextView gameOver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,11 @@ public class EndPage extends Activity implements View.OnClickListener {
 
         Button mBtn2 = (Button) findViewById(R.id.home_button);
         mBtn2.setOnClickListener(this);
+
+        gameOver = (TextView) findViewById(R.id.gameover);
+        if (StartPage2.new_high) {
+            gameOver.setText("New High Score!");
+        }
 
         highscore = (TextView) findViewById(R.id.highscore);
         score = (TextView) findViewById(R.id.score);
