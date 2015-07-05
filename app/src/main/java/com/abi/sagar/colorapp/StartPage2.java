@@ -380,6 +380,18 @@ public class StartPage2 extends Activity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(StartPage2.this, MainActivity.class));
+        finish();
+
+    }
+
+
 }
 
 /*

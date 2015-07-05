@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
-        android:text="Game Over!"
+        android:text=""
         android:textColor="#000"
         android:textStyle="bold"
         android:textSize="50sp" />
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:text="New High Score!"
+        android:text=""
         android:textColor="#000"
         android:textStyle="bold"
         android:textSize="42sp" />
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="135dp"
         android:text="Score"
         android:textSize="30sp" />
 
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="165dp"
-        android:text="11"
+        android:text="0"
         android:textStyle="bold"
         android:textSize="40sp" />
 
@@ -75,8 +75,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="255dp"
-        android:text="11"
+        android:layout_marginTop="250dp"
+        android:text="0"
         android:textStyle="bold"
         android:textSize="40sp" />
 
