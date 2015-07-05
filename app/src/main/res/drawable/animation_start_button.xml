@@ -1,4 +1,4 @@
-<!-- moving_start_button-->
+<!-- moving start button-->
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android"
     android:oneshot="false">
     <item android:drawable="@drawable/start_button_red" android:duration="300" />

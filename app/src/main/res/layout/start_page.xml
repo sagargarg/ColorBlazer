@@ -32,46 +32,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />-->
 
     <View
-        android:id="@+id/blue_rectangle"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right|top"
-        android:background="@drawable/rectangle_blue"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <View
-        android:id="@+id/red_rectangle"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="50dp"
-        android:background="@drawable/rectangle_red"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <View
-        android:id="@+id/green_rectangle"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="100dp"
-        android:background="@drawable/rectangle_green"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <View
-        android:id="@+id/yellow_rectangle"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="150dp"
-        android:background="@drawable/rectangle_yellow"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <View
         android:id="@+id/red_box_change"
         android:background="@drawable/box_red"
         android:layout_marginTop="40dp"
@@ -83,14 +43,6 @@
         android:id="@+id/red_box"
         android:background="@drawable/box_red"
         android:layout_marginTop="150dp"
-        android:layout_marginLeft="120px"
-        android:layout_width="@dimen/box_width"
-        android:layout_height="@dimen/box_width"/>
-
-    <View
-        android:id="@+id/blue_box"
-        android:background="@drawable/box_blue"
-        android:layout_marginTop="250dp"
         android:layout_marginLeft="120px"
         android:layout_width="@dimen/box_width"
         android:layout_height="@dimen/box_width"/>
