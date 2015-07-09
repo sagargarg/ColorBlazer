@@ -9,57 +9,39 @@
     android:paddingTop="0dp"
     tools:context=".StartPage">
 
-    <!--<TextView
-        android:id="@+id/score_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:text="Score"
-        android:textSize="30dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:text="@string/score"
-        android:textSize="75dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />-->
-
     <View
         android:id="@+id/red_box_change"
         android:background="@drawable/box_red"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="120px"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginStart="60dp"
         android:layout_width="@dimen/box_width"
         android:layout_height="@dimen/box_width"/>
 
     <View
         android:id="@+id/red_box"
-        android:background="@drawable/box_red"
+        android:background="@drawable/box_blue"
         android:layout_marginTop="150dp"
-        android:layout_marginLeft="120px"
+        android:layout_marginLeft="60dp"
+        android:layout_marginStart="60dp"
         android:layout_width="@dimen/box_width"
         android:layout_height="@dimen/box_width"/>
 
     <View
         android:id="@+id/yellow_box"
-        android:background="@drawable/box_yellow"
-        android:layout_marginTop="350dp"
-        android:layout_marginLeft="120px"
+        android:background="@drawable/box_green"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginStart="60dp"
         android:layout_width="@dimen/box_width"
         android:layout_height="@dimen/box_width"/>
 
     <View
         android:id="@+id/green_box"
-        android:background="@drawable/box_green"
-        android:layout_marginTop="450dp"
-        android:layout_marginLeft="120px"
+        android:background="@drawable/box_yellow"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginStart="60dp"
         android:layout_width="@dimen/box_width"
         android:layout_height="@dimen/box_width"/>
 
