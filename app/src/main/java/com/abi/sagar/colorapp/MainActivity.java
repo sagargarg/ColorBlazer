@@ -48,7 +48,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.start_button:
-                Intent intent = new Intent(this, StartPage.class);
+                Intent intent = new Intent(this,  StartPage.class);
                 startActivity(intent);
                 break;
             case R.id.start_button2:

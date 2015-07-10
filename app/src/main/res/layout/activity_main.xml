@@ -20,30 +20,27 @@
         android:textSize="45dp" />
 
     <Button
-        android:id="@+id/start_button2"
+        android:id="@+id/start_button"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="125dp"
         android:background="@drawable/start_button_selector"
-        android:text="Start"
+        android:text="Triangle"
         android:textColor="#fff"
         android:textSize="35dp" />
 
     <Button
-        android:id="@+id/start_button"
+        android:id="@+id/start_button2"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="250dp"
         android:background="@drawable/start_button_selector"
-        android:text="Graphics"
+        android:text="Square"
         android:textColor="#fff"
-        android:textSize="20dp" />
-
-
-
+        android:textSize="35dp" />
 
 </RelativeLayout>

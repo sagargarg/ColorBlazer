@@ -44,7 +44,7 @@ public class EndPage extends Activity implements View.OnClickListener {
         gameOver2 = (TextView) findViewById(R.id.gameover2);
         score_box_0 = AnimationUtils.loadAnimation(this, R.anim.score_box_0);
 
-        if (StartPage2.new_high) {
+        if (StartPage.new_high) {
             gameOver2.setText("New High Score!");
             gameOver2.startAnimation(score_box_0);
         }
@@ -56,8 +56,8 @@ public class EndPage extends Activity implements View.OnClickListener {
         highscore = (TextView) findViewById(R.id.highscore);
         score = (TextView) findViewById(R.id.score);
 
-        highscore.setText("" + StartPage2.high_score);
-        score.setText("" + StartPage2.total_score_num);
+        highscore.setText("" + StartPage.high_score);
+        score.setText("" + StartPage.total_score_num);
 
         score_box_1 = AnimationUtils.loadAnimation(this, R.anim.score_box_1);
         score_box_2 = AnimationUtils.loadAnimation(this, R.anim.score_box_2);
@@ -96,10 +96,10 @@ public class EndPage extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.replay_button:
-                //StartPage2.red_score_num = 0;
-                //StartPage2.blue_score_num = 0;
-                //StartPage2.green_score_num = 0;
-                Intent intent = new Intent(this, StartPage2.class);
+                //StartPage.red_score_num = 0;
+                //StartPage.blue_score_num = 0;
+                //StartPage.green_score_num = 0;
+                Intent intent = new Intent(this, StartPage.class);
                 startActivity(intent);
                 break;
             case R.id.home_button:
