@@ -8,7 +8,7 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     android:orientation="vertical"
-    tools:context=".EndPage">
+    tools:context=".EndPage2">
 
     <TextView
         android:id="@+id/gameover"
@@ -52,7 +52,7 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/score"
+        android:id="@+id/score_rec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -71,7 +71,7 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/highscore"
+        android:id="@+id/highscore_rec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -93,14 +93,14 @@
         android:textSize="20sp" />-->
 
     <Button
-        android:id="@+id/replay_button"
+        android:id="@+id/replay_button_rec"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="@dimen/score_width"
         android:layout_height="70dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="320dp"
         android:background="@drawable/score_box"
-        android:text="Replay Tri"
+        android:text="Replay Rect"
         android:textSize="25sp" />
 
     <!--<Button
