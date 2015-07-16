@@ -35,7 +35,7 @@ public class EndPage2 extends Activity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.end_page2);
+        setContentView(R.layout.end_page_two);
 
         Button mBtn1 = (Button) findViewById(R.id.replay_button_rec);
         mBtn1.setOnClickListener(this);
