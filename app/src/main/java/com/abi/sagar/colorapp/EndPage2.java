@@ -1,14 +1,14 @@
 package com.abi.sagar.colorapp;
 
-        import android.app.Activity;
-        import android.content.Intent;
-        import android.os.Bundle;
-        import android.view.Menu;
-        import android.view.View;
-        import android.view.animation.Animation;
-        import android.view.animation.AnimationUtils;
-        import android.widget.Button;
-        import android.widget.TextView;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by Sagar on 7/14/2015.
@@ -86,6 +86,13 @@ public class EndPage2 extends Activity implements View.OnClickListener{
 
         /*Intent intent = new Intent(getApplicationContext(),EndPage.class);
         startActivity(intent);*/
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
     @Override

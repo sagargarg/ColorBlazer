@@ -12,7 +12,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.os.Handler;
 import android.widget.TextView;
-
 import java.io.FileOutputStream;
 import java.util.Random;
 
@@ -49,7 +48,6 @@ public class StartPage2  extends Activity {
     TextView duration_num;
 
     int[] loc, loc1;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,11 +93,8 @@ public class StartPage2  extends Activity {
                             switch(ballcolor) {
                                 case 1:
                                     if (currentAnimation == 0) {
-                                        //++red_score_num;
                                         ++total_score_num_rec;
                                         total_score.setText("" + total_score_num_rec);
-                                        //red_score.setText("" + red_score_num);
-                                        //text.setText("Red");
                                         if (total_score_num_rec == 0){
                                             duration = 1800;
                                             move.setDuration(duration);
@@ -121,7 +116,7 @@ public class StartPage2  extends Activity {
                                             duration_num.setText("" + duration);
                                         }
                                         else if (total_score_num_rec > 20 && total_score_num_rec <= 28){
-                                            duration -= (total_score_num_rec)*1;
+                                            duration -= (total_score_num_rec);
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
@@ -141,7 +136,7 @@ public class StartPage2  extends Activity {
 
                                         SharedPreferences.Editor editor = settings2_rec.edit();
                                         editor.putInt("high_score_rec", high_score_rec);
-                                        editor.commit();
+                                        editor.apply();
 
                                         Intent intent = new Intent(getApplicationContext(),EndPage2.class);
                                         startActivity(intent);
@@ -149,11 +144,8 @@ public class StartPage2  extends Activity {
                                     break;
                                 case 2:
                                     if (currentAnimation == 1) {
-                                        //++green_score_num;
                                         ++total_score_num_rec;
                                         total_score.setText("" + total_score_num_rec);
-                                        //green_score.setText("" + green_score_num);
-                                        //text.setText("Green");
                                         if (total_score_num_rec == 0){
                                             duration = 1800;
                                             move.setDuration(duration);
@@ -175,7 +167,7 @@ public class StartPage2  extends Activity {
                                             duration_num.setText("" + duration);
                                         }
                                         else if (total_score_num_rec > 20 && total_score_num_rec <= 28){
-                                            duration -= (total_score_num_rec)*1;
+                                            duration -= (total_score_num_rec);
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
@@ -194,7 +186,7 @@ public class StartPage2  extends Activity {
 
                                         SharedPreferences.Editor editor = settings2_rec.edit();
                                         editor.putInt("high_score_rec", high_score_rec);
-                                        editor.commit();
+                                        editor.apply();
 
                                         Intent intent = new Intent(getApplicationContext(),EndPage2.class);
                                         startActivity(intent);
@@ -202,11 +194,8 @@ public class StartPage2  extends Activity {
                                     break;
                                 case 3:
                                     if (currentAnimation == 2) {
-                                        //++blue_score_num;
                                         ++total_score_num_rec;
                                         total_score.setText("" + total_score_num_rec);
-                                        //blue_score.setText("" + blue_score_num);
-                                        //text.setText("Blue");
                                         if (total_score_num_rec == 0){
                                             duration = 1800;
                                             move.setDuration(duration);
@@ -228,7 +217,7 @@ public class StartPage2  extends Activity {
                                             duration_num.setText("" + duration);
                                         }
                                         else if (total_score_num_rec > 20 && total_score_num_rec <= 28){
-                                            duration -= (total_score_num_rec)*1;
+                                            duration -= (total_score_num_rec);
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
@@ -247,7 +236,7 @@ public class StartPage2  extends Activity {
 
                                         SharedPreferences.Editor editor = settings2_rec.edit();
                                         editor.putInt("high_score_rec", high_score_rec);
-                                        editor.commit();
+                                        editor.apply();
 
                                         Intent intent = new Intent(getApplicationContext(),EndPage2.class);
                                         startActivity(intent);
@@ -255,11 +244,8 @@ public class StartPage2  extends Activity {
                                     break;
                                 case 4:
                                     if (currentAnimation == 3) {
-                                        //++blue_score_num;
                                         ++total_score_num_rec;
                                         total_score.setText("" + total_score_num_rec);
-                                        //blue_score.setText("" + blue_score_num);
-                                        //text.setText("Blue");
                                         if (total_score_num_rec == 0){
                                             duration = 1800;
                                             move.setDuration(duration);
@@ -281,7 +267,7 @@ public class StartPage2  extends Activity {
                                             duration_num.setText("" + duration);
                                         }
                                         else if (total_score_num_rec > 20 && total_score_num_rec <= 28){
-                                            duration -= (total_score_num_rec)*1;
+                                            duration -= (total_score_num_rec);
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
@@ -300,37 +286,26 @@ public class StartPage2  extends Activity {
 
                                         SharedPreferences.Editor editor = settings2_rec.edit();
                                         editor.putInt("high_score_rec", high_score_rec);
-                                        editor.commit();
+                                        editor.apply();
 
                                         Intent intent = new Intent(getApplicationContext(),EndPage2.class);
                                         startActivity(intent);
                                     }
                                     break;
                             }
-                            switch(color_box_fall_random.nextInt(3)) {
+                            switch(color_box_fall_random.nextInt(4)) {
                                 case 0:
                                     color1.startAnimation(move);
                                     color2.clearAnimation();
                                     color3.clearAnimation();
                                     color4.clearAnimation();
-                                    //red_score_num++;
-
                                     ballcolor = 1;
-                                    /*if (currentAnimation == 0){
-                                        ++red_score_num;
-                                    }*/
-                                    //red_score.setText("" + red_score_num);
                                     break;
                                 case 1:
                                     color2.startAnimation(move);
                                     color1.clearAnimation();
                                     color3.clearAnimation();
                                     color4.clearAnimation();
-                                    //green_score_num++;
-                                    /*if (currentAnimation == 1) {
-                                        ++green_score_num;
-                                    }*/
-                                    //green_score.setText("" + green_score_num);
                                     ballcolor = 2;
                                     break;
                                 case 2:
@@ -338,11 +313,6 @@ public class StartPage2  extends Activity {
                                     color1.clearAnimation();
                                     color2.clearAnimation();
                                     color4.clearAnimation();
-                                    //blue_score_num++;
-                                    /*if (currentAnimation == 2) {
-                                        ++blue_score_num;
-                                    }*/
-                                    //blue_score.setText("" + blue_score_num);
                                     ballcolor = 3;
                                     break;
                                 case 3:
@@ -350,11 +320,6 @@ public class StartPage2  extends Activity {
                                     color1.clearAnimation();
                                     color2.clearAnimation();
                                     color3.clearAnimation();
-                                    //blue_score_num++;
-                                    /*if (currentAnimation == 2) {
-                                        ++blue_score_num;
-                                    }*/
-                                    //blue_score.setText("" + blue_score_num);
                                     ballcolor = 4;
                                     break;
                             }
@@ -369,23 +334,17 @@ public class StartPage2  extends Activity {
             }
         });
 
-        switch(color_box_fall_random.nextInt(3)){
+        switch(color_box_fall_random.nextInt(4)){
             case 0:
                 color1.startAnimation(move);
-                //red_score_num++;
-                //red_score.setText("" + red_score_num);
                 ballcolor = 1;
                 break;
             case 1:
                 color2.startAnimation(move);
-                //green_score_num++;
-                //green_score.setText("" + green_score_num);
                 ballcolor = 2;
                 break;
             case 2:
                 color3.startAnimation(move);
-                //blue_score_num++;
-                //blue_score.setText("" + blue_score_num);
                 ballcolor = 3;
                 break;
             case 3:
@@ -409,9 +368,7 @@ public class StartPage2  extends Activity {
                 customHandler.postDelayed(this, 1000);
             }
         };
-
         customHandler.postDelayed(updateTimerThread, 0);
-
     }
 
     public boolean onTouchEvent(MotionEvent event) {
@@ -450,7 +407,5 @@ public class StartPage2  extends Activity {
         super.onBackPressed();
         startActivity(new Intent(StartPage2.this, MainActivity.class));
         finish();
-
     }
-
 }
