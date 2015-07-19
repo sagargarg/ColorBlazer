@@ -70,7 +70,7 @@ public class EndPage2 extends Activity implements View.OnClickListener{
         scores = findViewById(R.id.scores);
         score_word = (TextView) findViewById(R.id.score_word);
         highscore_word = (TextView) findViewById(R.id.highscore_word);
-        replay_button_rec = findViewById(R.id.replay_button);
+        replay_button_rec = findViewById(R.id.replay_button_rec);
         home_button = findViewById(R.id.home_button);
         nothing_button = findViewById(R.id.nothing_button);
 
