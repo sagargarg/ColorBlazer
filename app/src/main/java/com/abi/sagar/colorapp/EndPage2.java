@@ -98,7 +98,7 @@ public class EndPage2 extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.replay_button:
+            case R.id.replay_button_rec:
                 //StartPage.red_score_num = 0;
                 //StartPage.blue_score_num = 0;
                 //StartPage.green_score_num = 0;
