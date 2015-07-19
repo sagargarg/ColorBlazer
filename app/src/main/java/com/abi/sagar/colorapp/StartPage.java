@@ -155,6 +155,7 @@ public class StartPage extends Activity {
                                         editor.commit();
 
                                         Intent intent = new Intent(getApplicationContext(),EndPage.class);
+                                        finish();
                                         startActivity(intent);
                                     }
                                     break;
@@ -208,6 +209,7 @@ public class StartPage extends Activity {
                                         editor.commit();
 
                                         Intent intent = new Intent(getApplicationContext(),EndPage.class);
+                                        finish();
                                         startActivity(intent);
                                     }
                                     break;
@@ -261,6 +263,7 @@ public class StartPage extends Activity {
                                         editor.commit();
 
                                         Intent intent = new Intent(getApplicationContext(),EndPage.class);
+                                        finish();
                                         startActivity(intent);
                                     }
                                     break;

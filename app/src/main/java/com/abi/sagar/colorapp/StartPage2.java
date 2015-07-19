@@ -139,6 +139,7 @@ public class StartPage2  extends Activity {
                                         editor.apply();
 
                                         Intent intent = new Intent(getApplicationContext(),EndPage2.class);
+                                        finish();
                                         startActivity(intent);
                                     }
                                     break;
@@ -189,6 +190,7 @@ public class StartPage2  extends Activity {
                                         editor.apply();
 
                                         Intent intent = new Intent(getApplicationContext(),EndPage2.class);
+                                        finish();
                                         startActivity(intent);
                                     }
                                     break;
@@ -239,6 +241,7 @@ public class StartPage2  extends Activity {
                                         editor.apply();
 
                                         Intent intent = new Intent(getApplicationContext(),EndPage2.class);
+                                        finish();
                                         startActivity(intent);
                                     }
                                     break;
@@ -289,6 +292,7 @@ public class StartPage2  extends Activity {
                                         editor.apply();
 
                                         Intent intent = new Intent(getApplicationContext(),EndPage2.class);
+                                        finish();
                                         startActivity(intent);
                                     }
                                     break;

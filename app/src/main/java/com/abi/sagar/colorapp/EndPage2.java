@@ -103,11 +103,13 @@ public class EndPage2 extends Activity implements View.OnClickListener{
                 //StartPage.blue_score_num = 0;
                 //StartPage.green_score_num = 0;
                 Intent intent = new Intent(this, StartPage2.class);
+                finish();
                 startActivity(intent);
                 break;
             case R.id.home_button:
-                Intent intent2 = new Intent(this, MainActivity.class);
-                startActivity(intent2);
+                //Intent intent2 = new Intent(this, MainActivity.class);
+                finish();
+                //startActivity(intent2);
                 break;
         }
     }
