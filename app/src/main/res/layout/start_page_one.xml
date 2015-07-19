@@ -43,7 +43,7 @@
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="225dp"
-        android:background="@drawable/triangle_no_diagonals" />
+        android:background="@drawable/trianglecolor" />
 
     <TextView
         android:layout_width="wrap_content"

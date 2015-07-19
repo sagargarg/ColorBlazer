@@ -22,11 +22,11 @@
     <Button
         android:id="@+id/start_button"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
+        android:layout_width="225dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="125dp"
-        android:background="@drawable/start_button_selector"
+        android:background="@drawable/box_blue"
         android:text="Triangle"
         android:textColor="#fff"
         android:textSize="35dp" />
@@ -34,11 +34,11 @@
     <Button
         android:id="@+id/start_button2"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
+        android:layout_width="225dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp"
-        android:background="@drawable/start_button_selector"
+        android:background="@drawable/box_red"
         android:text="Square"
         android:textColor="#fff"
         android:textSize="35dp" />
