@@ -27,6 +27,11 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name=".StartPage3"
+            android:label="@string/title_startpage"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name=".EndPage"
             android:label="@string/title_startpage"
             android:screenOrientation="portrait" >
@@ -35,6 +40,10 @@
             android:name=".EndPage2"
             android:label="@string/title_startpage"
             android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".MainActivity2Activity"
+            android:label="@string/title_activity_main_activity2" >
         </activity>
     </application>
 

@@ -43,5 +43,17 @@
         android:textColor="#fff"
         android:textSize="35dp" />
 
+    <Button
+        android:id="@+id/start_button3"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="225dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="375dp"
+        android:background="@drawable/box_green"
+        android:text="Pentagon"
+        android:textColor="#fff"
+        android:textSize="35dp" />
+
 
 </RelativeLayout>

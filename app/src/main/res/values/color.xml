@@ -15,4 +15,7 @@
     <color name="green_dark">#27ae60</color>
     <color name="green_light">#2ecc71</color>
 
+    <color name="purple_dark">#8e44ad</color>
+    <color name="purple_light">#9b59b6</color>
+
 </resources>

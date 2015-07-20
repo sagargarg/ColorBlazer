@@ -26,6 +26,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Button mBtn2 = (Button) findViewById(R.id.start_button2);
         mBtn2.setOnClickListener(this);
 
+        Button mBtn3 = (Button) findViewById(R.id.start_button3);
+        mBtn3.setOnClickListener(this);
+
         /*Button rocketImage = (Button) findViewById(R.id.start_button);
         rocketImage.setBackgroundResource(R.drawable.animation_start_button);
         rocketAnimation = (AnimationDrawable) rocketImage.getBackground();
@@ -54,6 +57,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.start_button2:
                 Intent intent2 = new Intent(this, StartPage2.class);
                 startActivity(intent2);
+                break;
+            case R.id.start_button3:
+                Intent intent3 = new Intent(this, StartPage3.class);
+                startActivity(intent3);
                 break;
         }
     }
