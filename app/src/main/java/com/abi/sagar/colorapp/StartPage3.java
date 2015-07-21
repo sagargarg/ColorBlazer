@@ -54,8 +54,8 @@ public class StartPage3 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         new_high_pent = false;
         super.onCreate(savedInstanceState);
-        SharedPreferences settings_rec = getSharedPreferences("high_score_pent", 0);
-        high_score_pent = settings_rec.getInt("high_score_pent", 0);
+        SharedPreferences settings_pent = getSharedPreferences("high_score_pent", 0);
+        high_score_pent = settings_pent.getInt("high_score_pent", 0);
         setContentView(R.layout.start_page_three);
 
         pent_rotate1 = AnimationUtils.loadAnimation(this, R.anim.pent_rotate1);
@@ -137,15 +137,15 @@ public class StartPage3 extends Activity {
                                             new_high_pent = true;
                                         }
 
-                                        SharedPreferences settings2_rec = getSharedPreferences("high_score_pent", 0);
+                                        SharedPreferences settings2_pent = getSharedPreferences("high_score_pent", 0);
 
-                                        SharedPreferences.Editor editor = settings2_rec.edit();
+                                        SharedPreferences.Editor editor = settings2_pent.edit();
                                         editor.putInt("high_score_pent", high_score_pent);
                                         editor.apply();
 
-//                                        Intent intent = new Intent(getApplicationContext(),EndPage2.class);
-//                                        finish();
-//                                        startActivity(intent);
+                                        Intent intent = new Intent(getApplicationContext(),EndPage3.class);
+                                        finish();
+                                        startActivity(intent);
                                     }
                                     break;
                                 case 2:
@@ -188,15 +188,15 @@ public class StartPage3 extends Activity {
                                             high_score_pent = total_score_num_pent;
                                             new_high_pent = true;
                                         }
-                                        SharedPreferences settings2_rec = getSharedPreferences("high_score_pent", 0);
+                                        SharedPreferences settings2_pent = getSharedPreferences("high_score_pent", 0);
 
-                                        SharedPreferences.Editor editor = settings2_rec.edit();
+                                        SharedPreferences.Editor editor = settings2_pent.edit();
                                         editor.putInt("high_score_pent", high_score_pent);
                                         editor.apply();
 
-//                                        Intent intent = new Intent(getApplicationContext(),EndPage2.class);
-//                                        finish();
-//                                        startActivity(intent);
+                                        Intent intent = new Intent(getApplicationContext(),EndPage3.class);
+                                        finish();
+                                        startActivity(intent);
                                     }
                                     break;
                                 case 3:
@@ -239,23 +239,48 @@ public class StartPage3 extends Activity {
                                             high_score_pent = total_score_num_pent;
                                             new_high_pent = true;
                                         }
-                                        SharedPreferences settings2_rec = getSharedPreferences("high_score_pent", 0);
+                                        SharedPreferences settings2_pent = getSharedPreferences("high_score_pent", 0);
 
-                                        SharedPreferences.Editor editor = settings2_rec.edit();
+                                        SharedPreferences.Editor editor = settings2_pent.edit();
                                         editor.putInt("high_score_pent", high_score_pent);
                                         editor.apply();
 
-//                                        Intent intent = new Intent(getApplicationContext(),EndPage2.class);
-//                                        finish();
-//                                        startActivity(intent);
+                                        Intent intent = new Intent(getApplicationContext(),EndPage3.class);
+                                        finish();
+                                        startActivity(intent);
                                     }
                                     break;
                                 case 4:
                                     if (currentAnimation == 3) {
                                         ++total_score_num_pent;
                                         total_score.setText("" + total_score_num_pent);
-                                        if (total_score_num_pent >= 0){
+                                        if (total_score_num_pent == 0){
                                             duration = 1800;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num_pent > 0 && total_score_num_pent <= 5){
+                                            duration -= (total_score_num_pent)*9;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num_pent > 5 && total_score_num_pent <= 10){
+                                            duration -= (total_score_num_pent)*6;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num_pent > 11 && total_score_num_pent <= 19){
+                                            duration -= (total_score_num_pent)*3;
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num_pent > 20 && total_score_num_pent <= 28){
+                                            duration -= (total_score_num_pent);
+                                            move.setDuration(duration);
+                                            duration_num.setText("" + duration);
+                                        }
+                                        else if (total_score_num_pent > 29){
+                                            duration = 800;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
@@ -265,15 +290,15 @@ public class StartPage3 extends Activity {
                                             high_score_pent = total_score_num_pent;
                                             new_high_pent = true;
                                         }
-                                        SharedPreferences settings2_rec = getSharedPreferences("high_score_pent", 0);
+                                        SharedPreferences settings2_pent = getSharedPreferences("high_score_pent", 0);
 
-                                        SharedPreferences.Editor editor = settings2_rec.edit();
+                                        SharedPreferences.Editor editor = settings2_pent.edit();
                                         editor.putInt("high_score_pent", high_score_pent);
                                         editor.apply();
 
-//                                        Intent intent = new Intent(getApplicationContext(),EndPage2.class);
-//                                        finish();
-//                                        startActivity(intent);
+                                        Intent intent = new Intent(getApplicationContext(),EndPage3.class);
+                                        finish();
+                                        startActivity(intent);
                                     }
                                     break;
                                 case 5:
@@ -316,15 +341,15 @@ public class StartPage3 extends Activity {
                                             high_score_pent = total_score_num_pent;
                                             new_high_pent = true;
                                         }
-                                        SharedPreferences settings2_rec = getSharedPreferences("high_score_pent", 0);
+                                        SharedPreferences settings2_pent = getSharedPreferences("high_score_pent", 0);
 
-                                        SharedPreferences.Editor editor = settings2_rec.edit();
+                                        SharedPreferences.Editor editor = settings2_pent.edit();
                                         editor.putInt("high_score_pent", high_score_pent);
                                         editor.apply();
 
-//                                        Intent intent = new Intent(getApplicationContext(),EndPage2.class);
-//                                        finish();
-//                                        startActivity(intent);
+                                        Intent intent = new Intent(getApplicationContext(),EndPage3.class);
+                                        finish();
+                                        startActivity(intent);
                                     }
                                     break;
                             }
