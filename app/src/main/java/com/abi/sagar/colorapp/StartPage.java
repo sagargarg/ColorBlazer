@@ -18,21 +18,34 @@ import java.util.Random;
 
 public class StartPage extends Activity {
 
+    //Triangle Rotation Animations
     Animation rotate1;
     Animation rotate2;
     Animation rotate3;
+
+    //Triangle Image
     View triangle;
+    //Determines what triangle rotation user is one
     int currentAnimation = 0;
+    //Determines what color ball falls
     int ballcolor;
 
+    //Ball Translational Animation
     Animation move;
+
+    //Three Color Ball Drawables
     View color1;
     View color2;
     View color3;
+
+    //Picks random color ball to fall
     Random color_box_fall_random;
     int i;
+
+    // ??? WHAT IS THIS ???
     Handler handler;
 
+    //User's Total Score Textview
     TextView total_score;
 
     /*TextView red_score;
@@ -42,13 +55,17 @@ public class StartPage extends Activity {
     public static int blue_score_num = 0;
     public static int green_score_num = 0;*/
 
+    //User's High Score
     protected static int total_score_num = 0;
     public static int high_score = 0;
+    //Determines if user has a new high score
     public static boolean new_high;
 
+    //Starting duration of ball animation
     int duration = 1800;
     TextView duration_num;
 
+    // ??? WHAT IS THIS ???
     int[] loc, loc1;
 
     @Override
@@ -132,7 +149,7 @@ public class StartPage extends Activity {
                                             duration_num.setText("" + duration);
                                         }
                                         else if (total_score_num > 20 && total_score_num <= 28){
-                                            duration -= (total_score_num)*1;
+                                            duration -= total_score_num;
                                             move.setDuration(duration);
                                             duration_num.setText("" + duration);
                                         }
@@ -273,36 +290,35 @@ public class StartPage extends Activity {
                                     color1.startAnimation(move);
                                     color2.clearAnimation();
                                     color3.clearAnimation();
-                                    //red_score_num++;
-
                                     ballcolor = 1;
+                                    break;
+                                    //red_score_num++;
                                     /*if (currentAnimation == 0){
                                         ++red_score_num;
                                     }*/
                                     //red_score.setText("" + red_score_num);
-                                    break;
                                 case 1:
                                     color2.startAnimation(move);
                                     color1.clearAnimation();
                                     color3.clearAnimation();
+                                    ballcolor = 2;
+                                    break;
                                     //green_score_num++;
                                     /*if (currentAnimation == 1) {
                                         ++green_score_num;
                                     }*/
                                     //green_score.setText("" + green_score_num);
-                                    ballcolor = 2;
-                                    break;
                                 case 2:
                                     color3.startAnimation(move);
                                     color1.clearAnimation();
                                     color2.clearAnimation();
+                                    ballcolor = 3;
+                                    break;
                                     //blue_score_num++;
                                     /*if (currentAnimation == 2) {
                                         ++blue_score_num;
                                     }*/
                                     //blue_score.setText("" + blue_score_num);
-                                    ballcolor = 3;
-                                    break;
                             }
                         }
                     }, 10);
@@ -318,22 +334,22 @@ public class StartPage extends Activity {
         switch(color_box_fall_random.nextInt(3)){
             case 0:
                 color1.startAnimation(move);
-                //red_score_num++;
-                //red_score.setText("" + red_score_num);
                 ballcolor = 1;
                 break;
+                //red_score_num++;
+                //red_score.setText("" + red_score_num);
             case 1:
                 color2.startAnimation(move);
-                //green_score_num++;
-                //green_score.setText("" + green_score_num);
                 ballcolor = 2;
                 break;
+                //green_score_num++;
+                //green_score.setText("" + green_score_num);
             case 2:
                 color3.startAnimation(move);
-                //blue_score_num++;
-                //blue_score.setText("" + blue_score_num);
                 ballcolor = 3;
                 break;
+                //blue_score_num++;
+                //blue_score.setText("" + blue_score_num);
         }
 
         loc = new int[2];
@@ -353,7 +369,6 @@ public class StartPage extends Activity {
         };
 
         customHandler.postDelayed(updateTimerThread, 0);
-
     }
 
     public boolean onTouchEvent(MotionEvent event) {
@@ -386,15 +401,11 @@ public class StartPage extends Activity {
 
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(StartPage.this, MainActivity.class));
         finish();
-
     }
-
-
 }
 
 /*
@@ -403,8 +414,7 @@ What do we need to do
 
 Convert dp into pixels based on the pixels per inch on different phones
     This is for the ball animation, and how fas the ball should fall
-Tap to Start
-Prevent User from going back to previous changes, and set was pages to go to
+Tap to Start We may not need to do this
 Integrate Google Game into the app
 Find out how to implement ads
 Name and App Icon
