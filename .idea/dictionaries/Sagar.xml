@@ -2,7 +2,10 @@
   <dictionary name="Sagar">
     <words>
       <w>ballcolor</w>
+      <w>gameover</w>
       <w>highscore</w>
+      <w>rectanglecolor</w>
+      <w>trianglecolor</w>
     </words>
   </dictionary>
 </component>

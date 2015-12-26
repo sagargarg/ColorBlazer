@@ -3,8 +3,19 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="box_width">80dp</dimen>
-
+    <dimen name="box_width">30dp</dimen>
     <dimen name="score_width">200dp</dimen>
+
+    <dimen name="score_margin_top">25dp</dimen>
+    <dimen name="score_margin_left">35dp</dimen>
+
+    <dimen name="gameover_text_size">50sp</dimen>
+    <dimen name="gameover2_text_size">42sp</dimen>
+
+    <dimen name="score_text_size">70sp</dimen>
+    <dimen name="end_page_text_size">30sp</dimen>
+    <dimen name="end_page_score_size">40sp</dimen>
+    <dimen name="replay_text_size">25sp</dimen>
+    <dimen name="home_text_size">20sp</dimen>
 
 </resources>

@@ -3,7 +3,12 @@
 
     <string name="app_name">Color Blaze</string>
     <string name="title_startpage">Start</string>
-    <string name="score">XX</string>
+
+    <string name="score">0</string>
+    <string name="score_text">Score</string>
+    <string name="best_text">Best</string>
+    <string name="replay">Replay</string>
+    <string name="home">Home</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>

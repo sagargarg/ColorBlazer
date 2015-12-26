@@ -30,7 +30,7 @@ public class EndPage2 extends Activity implements View.OnClickListener{
     TextView highscore_word;
     View replay_button_rec;
     View home_button;
-    View nothing_button;
+    //View nothing_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +72,7 @@ public class EndPage2 extends Activity implements View.OnClickListener{
         highscore_word = (TextView) findViewById(R.id.highscore_word);
         replay_button_rec = findViewById(R.id.replay_button_rec);
         home_button = findViewById(R.id.home_button);
-        nothing_button = findViewById(R.id.nothing_button);
+        //nothing_button = findViewById(R.id.nothing_button);
 
         scores.startAnimation(score_box_1);
         score_rec.startAnimation(score_box_1);
@@ -81,7 +81,7 @@ public class EndPage2 extends Activity implements View.OnClickListener{
         highscore_rec.startAnimation(score_box_1);
         replay_button_rec.startAnimation(score_box_2);
         home_button.startAnimation(score_box_3);
-        nothing_button.startAnimation(score_box_4);
+        //nothing_button.startAnimation(score_box_4);
 
 
         /*Intent intent = new Intent(getApplicationContext(),EndPage.class);
@@ -102,7 +102,7 @@ public class EndPage2 extends Activity implements View.OnClickListener{
                 //StartPage.red_score_num = 0;
                 //StartPage.blue_score_num = 0;
                 //StartPage.green_score_num = 0;
-                Intent intent = new Intent(this, StartPage3.class);
+                Intent intent = new Intent(this, StartPage2.class);
                 finish();
                 startActivity(intent);
                 break;
